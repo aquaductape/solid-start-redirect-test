@@ -5,11 +5,11 @@ const isAuthorized = false;
 const getUser = cache(async () => {
   "use server";
 
-  console.log("getUser: before redirect");
+  console.log("getUser: before redirect"); // logs
   if (!isAuthorized) {
     throw redirect("/about");
   }
-  console.log("getUser: after redirect");
+  console.log("getUser: after redirect"); // doesn't log
   return {
     name: "John",
     age: 42,
